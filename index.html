@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyMate | Student Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">YOUR PERSONAL STUDY SPACE</p>
+      <h1>StudyMate <span>✦</span></h1>
+    </div>
+    <div class="date" id="today"></div>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">SMALL STEPS, BIG RESULTS</p>
+        <h2>Plan your day.<br><span>Make it count.</span></h2>
+        <p class="muted">Keep your classes, assignments and study goals in one place.</p>
+      </div>
+      <div class="welcome-art" aria-hidden="true">📚</div>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card"><span>Tasks today</span><strong id="totalTasks">0</strong></article>
+      <article class="stat-card"><span>Completed</span><strong id="completedTasks">0</strong></article>
+      <article class="stat-card"><span>Progress</span><strong id="progressText">0%</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">STAY ON TRACK</p><h2>My tasks</h2></div>
+        <span class="pill" id="taskCount">0 tasks</span>
+      </div>
+      <form id="taskForm" class="task-form">
+        <input id="taskInput" type="text" placeholder="What do you need to study?" maxlength="90" required>
+        <select id="subjectInput" aria-label="Subject">
+          <option value="General">General</option>
+          <option>Mathematics</option><option>Physics</option><option>Chemistry</option>
+          <option>Computer Science</option><option>English</option><option>Other</option>
+        </select>
+        <input id="dueInput" type="date" aria-label="Due date">
+        <button type="submit">+ Add task</button>
+      </form>
+      <div class="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="pending">Pending</button>
+        <button class="filter" data-filter="completed">Completed</button>
+      </div>
+      <ul id="taskList" class="task-list"></ul>
+      <p id="emptyState" class="empty">No tasks here yet. Add your first task above ✨</p>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="panel note-panel">
+        <p class="eyebrow">A LITTLE REMINDER</p>
+        <h2>Today's focus</h2>
+        <textarea id="focusNote" placeholder="Write your main goal for today..."></textarea>
+        <button id="saveNote" class="secondary">Save focus</button>
+        <p id="noteStatus" class="small muted" aria-live="polite"></p>
+      </article>
+      <article class="panel tip-panel">
+        <p class="eyebrow">STUDY TIP</p>
+        <div class="tip-icon">☕</div>
+        <h2>Try the 25-minute rule</h2>
+        <p class="muted">Focus on one subject for 25 minutes, then take a short break. Repeat when you're ready.</p>
+      </article>
+    </section>
+  </main>
+  <footer>Made for your next big achievement <span>♥</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
